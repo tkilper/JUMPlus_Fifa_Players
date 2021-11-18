@@ -31,5 +31,14 @@ sns.barplot(x='Nationality', y='Number of Players', data=pbcbar, color="green")
 plt.show()
 
 # show top 5 players' short names and wages
+dfsnw = df[['short_name', 'wag_eur']]
+top5snw = dfsnw.head(5)
+print(top5snw)
+# sorting by highest wages
+top5snwbywage = dfsnw.sort_values(['wage_eur'], ascending=False).head(5)
+print(top5snwbywage)
 
-#
+# bar chart of top 5 players by wage
+top5snwbywage.columns = ['Name', 'Wage in Euros']
+sns.barplot(x='Name', y='Wage in Euros', data=top5snwbywage)
+plt.show()
