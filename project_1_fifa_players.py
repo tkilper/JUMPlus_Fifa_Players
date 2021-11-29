@@ -31,7 +31,7 @@ sns.barplot(x='Nationality', y='Number of Players', data=pbcbar, color="green")
 plt.show()
 
 # show top 5 players' short names and wages
-dfsnw = df[['short_name', 'wag_eur']]
+dfsnw = df[['short_name', 'wage_eur']]
 top5snw = dfsnw.head(5)
 print(top5snw)
 # sorting by highest wages
@@ -42,3 +42,46 @@ print(top5snwbywage)
 top5snwbywage.columns = ['Name', 'Wage in Euros']
 sns.barplot(x='Name', y='Wage in Euros', data=top5snwbywage)
 plt.show()
+
+# Top 10 German Players
+gers = df[df['nationality'] == 'Germany']
+top10ger = gers.head(10)
+print(top10ger)
+
+# Top 5 German Players by height, weight, and wages
+# - height
+top5gerbyhei = gers.sort_values(['height_cm'], ascending=False).head(5)
+print(top5gerbyhei)
+# - weight
+top5gerbywei = gers.sort_values(['weight_kg'], ascending=False).head(5)
+print(top5gerbywei)
+# - wages
+top5gerbywag = gers.sort_values(['wage_eur'], ascending=False).head(5)
+print(top5gerbywag)
+
+# short names and wages of top 5 german players
+top5gershortnam_wag = gers[['short_name','wage_eur']].head(5)
+print(top5gershortnam_wag)
+
+# short names of top 5 players by shooting
+top5bysho_shortnam = df.sort_values(['shooting'], ascending=False).head(5)['short_name']
+print(top5bysho_shortnam)
+
+# short name, defending, nationality, club of top 5 players by defending
+top5bydef = df.sort_values(['defending'], ascending=False).head(5)[['short_name','defending','nationality','club']]
+print(top5bydef)
+
+# Top 5 Real Madrid players
+top5rm = df[df['club'] == 'Real Madrid'].head(5)
+# - wages
+top5rm_wage = top5rm[['wage_eur']]
+print(top5rm_wage)
+# - shooting
+top5rm_sho = top5rm[['shooting']]
+print(top5rm_sho)
+# - defending
+top5rm_def = top5rm[['defending']]
+print(top5rm_def)
+# - nationality
+top5rm_nat = top5rm[['nationality']]
+print(top5rm_nat)
