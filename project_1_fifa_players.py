@@ -85,3 +85,12 @@ print(top5rm_def)
 # - nationality
 top5rm_nat = top5rm[['nationality']]
 print(top5rm_nat)
+
+# *********************************************
+# Bonus
+# **********************************************
+
+# All players 23 and over with less than once year on their contract
+over_23_low_con = df[df['contract_valid_until'] == 2020]
+over_23_low_con = over_23_low_con[over_23_low_con['age'] >= 23]
+print(over_23_low_con)
