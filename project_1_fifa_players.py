@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Import dataset
 print('1) Load the csv and show the top 5 records')
 print('****************************************************')
-df = pd.read_csv('JUMPlus/Project1FifaPlayers/JUMPlus_Fifa_Players/players_20.csv')
+df = pd.read_csv('C:/Users/Tristan Kilper/Desktop/JUMP/JUMPlus/Project1FifaPlayers/JUMPlus_Fifa_Players/players_20.csv')
 
 # top 5 records
 print(df.head(5))
